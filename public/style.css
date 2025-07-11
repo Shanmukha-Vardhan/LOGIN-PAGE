@@ -1,0 +1,256 @@
+:root {
+    --primary-green: #13aa52;
+    --dark-green: #0e8642;
+    --bg-color: #f0f0f0;
+    --container-bg: #ffffff;
+    --text-color: #333;
+    --input-border-color: #ccc;
+    --input-text-color: #000;
+}
+body.dark-mode {
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --input-border-color: #444;
+    --input-text-color: #fff;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    background-color: var(--container-bg);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: background-color 0.3s;
+}
+
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.header-left { 
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-left .user-name,
+.header-right .connect-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.header-right .theme-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 10px; 
+}
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-green);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* --- FORM STYLES --- */
+.form h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--container-bg);
+    color: var(--input-text-color);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-green);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--dark-green);
+}
+
+.switch-form, .forgot-password {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.switch-form a, .forgot-password a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.form-message.success {
+    color: var(--primary-green);
+}
+.form-message.error {
+    color: #d9534f;
+}
+.dashboard-link {
+    display: inline-block; 
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--primary-green);
+    color: white !important; 
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.dashboard-link:hover {
+    background-color: var(--dark-green);
+    color: white !important;
+}
+#dashboard-container {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.portfolio-card {
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    background-color: var(--bg-color); 
+    transition: background-color 0.3s;
+}
+
+.portfolio-card h2 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.portfolio-card p {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.portfolio-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: var(--primary-green);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.portfolio-button:hover {
+    background-color: var(--dark-green);
+}
